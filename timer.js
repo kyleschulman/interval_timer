@@ -1,5 +1,3 @@
-    <script>
-        //set minutes
         var mins = 2;
 
         //calculate the seconds
@@ -62,4 +60,4 @@
             //from total seconds remaining
             return secs - Math.round(mins * 60);
         }
-    </script>
+
