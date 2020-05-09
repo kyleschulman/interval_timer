@@ -9,25 +9,26 @@
 <body>
 	<!-- HTML code -->
 
-    <div id="wrapper">
-  <div id="header">Workout Type</div>
-  <div id="main">Warm Up <input type="checkbox" id="WarmUp" name="WarmUp" value="5min"> </div>
-<div id="main">Main Workout <div class="qty mt-5">
-                        <input type="number" class="count" name="qty" value="10">
-                    </div> </div>
-  <div id="main">Cool Down <input type="checkbox" id="CoolDown" name="CoolDown" value="5min"> </div>
-</div>
+	<div id="wrapper">
+		<div id="header">Workout Type</div>
+		<div id="main">Warm Up <input type="checkbox" id="WarmUp" name="WarmUp" value="5min"> </div>
+		<div id="main">Main Workout <div class="qty mt-5">
+				<input type="number" class="count" name="qty" value="10">
+			</div>
+		</div>
+		<div id="main">Cool Down <input type="checkbox" id="CoolDown" name="CoolDown" value="5min"> </div>
+	</div>
 
 
-<div id="chronoExample">
-    <div class="values">00:00:00</div>
-    <div>
-        <button class="startButton">Start</button>
-        <button class="pauseButton" >Pause</button>
-        <button class="stopButton">Stop</button>
-        <button class="resetButton">Reset</button>
-    </div>
-</div>
+	<div id="chronoExample">
+		<div class="values">00:00:00</div>
+		<div>
+			<button class="startButton">Start</button>
+			<button class="pauseButton">Pause</button>
+			<button class="stopButton">Stop</button>
+			<button class="resetButton">Reset</button>
+		</div>
+	</div>
 
 
 	<!--The jQuery library-->
@@ -35,28 +36,28 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 	<script>
-var timer = new Timer();
-$('#chronoExample .startButton').click(function () {
-    timer.start();
-});
-$('#chronoExample .pauseButton').click(function () {
-    timer.pause();
-});
-$('#chronoExample .stopButton').click(function () {
-    timer.stop();
-});
-$('#chronoExample .resetButton').click(function () {
-    timer.reset();
-});
-timer.addEventListener('secondsUpdated', function (e) {
-    $('#chronoExample .values').html(timer.getTimeValues().toString());
-});
-timer.addEventListener('started', function (e) {
-    $('#chronoExample .values').html(timer.getTimeValues().toString());
-});
-timer.addEventListener('reset', function (e) {
-    $('#chronoExample .values').html(timer.getTimeValues().toString());
-});
+		var timer = new Timer();
+		$('#chronoExample .startButton').click(function() {
+			timer.start();
+		});
+		$('#chronoExample .pauseButton').click(function() {
+			timer.pause();
+		});
+		$('#chronoExample .stopButton').click(function() {
+			timer.stop();
+		});
+		$('#chronoExample .resetButton').click(function() {
+			timer.reset();
+		});
+		timer.addEventListener('secondsUpdated', function(e) {
+			$('#chronoExample .values').html(timer.getTimeValues().toString());
+		});
+		timer.addEventListener('started', function(e) {
+			$('#chronoExample .values').html(timer.getTimeValues().toString());
+		});
+		timer.addEventListener('reset', function(e) {
+			$('#chronoExample .values').html(timer.getTimeValues().toString());
+		});
 
 	</script>
 	<!--Site-specific JavaScript code using jQuery-->
