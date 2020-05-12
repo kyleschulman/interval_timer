@@ -8,7 +8,6 @@
 
 <body>
 	<!-- HTML code -->
-
 	<div id="wrapper">
 		<div id="header">Workout Type</div>
 		<div id="main">Warm Up <input type="checkbox" id="WarmUp" name="WarmUp" value="5min"> </div>
@@ -36,30 +35,10 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 	<script>
-		var timer = new Timer();
-		$('#chronoExample .startButton').click(function() {
-			timer.start();
-		});
-		$('#chronoExample .pauseButton').click(function() {
-			timer.pause();
-		});
-		$('#chronoExample .stopButton').click(function() {
-			timer.stop();
-		});
-		$('#chronoExample .resetButton').click(function() {
-			timer.reset();
-		});
-		timer.addEventListener('secondsUpdated', function(e) {
-			$('#chronoExample .values').html(timer.getTimeValues().toString());
-		});
-		timer.addEventListener('started', function(e) {
-			$('#chronoExample .values').html(timer.getTimeValues().toString());
-		});
-		timer.addEventListener('reset', function(e) {
-			$('#chronoExample .values').html(timer.getTimeValues().toString());
-		});
+
 
 	</script>
+
 	<!--Site-specific JavaScript code using jQuery-->
 
 	<script src="timer.js"></script>
