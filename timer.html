@@ -8,6 +8,7 @@
 
 <body>
 	<!-- HTML code -->
+
 	<div id="wrapper">
 		<div id="header">Workout Type</div>
 		<div id="main">Warm Up <input type="checkbox" id="WarmUp" name="WarmUp" value="5min"> </div>
@@ -28,7 +29,7 @@
 			<button class="resetButton">Reset</button>
 		</div>
 	</div>
-
+<div id="time"></div>
 
 	<!--The jQuery library-->
 
@@ -36,6 +37,56 @@
 
 	<script>
 
+$(document).ready( () => {
+  let $box = $("#box");
+  let $time = $("#time");
+
+  // This is the way to set a timed event function
+  timerId = setInterval(timerFunction, 100);
+
+  // get the current time and save it.
+  let start = new Date();
+
+  // This is the time interval
+  let alarmInterval = 60;
+  let countDown = 60;
+
+  // Set the alarm
+  let alarm = start.getTime() + alarmInterval;
+
+  // This is the function that we will call when the timer event fires.
+  function timerFunction() {
+    // Check the time
+    let now = new Date();
+    let currentTime = now.getTime();
+    var numberOfTimes = 0;
+
+   if (countDown == 0) {
+     numberOfTimes += 1;
+    } else if (countDown < 0) {
+      countDown = 60;
+      setTimeout(5000);
+    } else {
+      countDown = countDown - .1;
+    }
+
+    $time.text(Math.floor(countDown));
+
+    // Is it time to blink?
+    if(currentTime > alarm) {
+      // if you need to repeat, then just reset the alarm
+      alarm = currentTime + alarmInterval;
+
+      // or if you need to stop the clock
+      // clearInterval(timerId);
+
+      // Now do the thing that needs to be done at this time
+      // In this case I am just toggleing the visibility of the box
+      // $box.toggle();
+    }
+
+  }
+});
 
 	</script>
 
