@@ -37,15 +37,6 @@
             let $box = $("#box");
             let $time = $("#time");
 
-            // This is the way to set a timed event function
-            var numberOfTimes = 0;
-            while (numberOfTimes < 2) {
-                while (x < 6000) {
-                    setInterval(timerFunction, 100);
-                    x += 100;
-                }
-                numberOfTimes += 1;
-            }
             // get the current time and save it.
             let start = new Date();
 
@@ -55,6 +46,17 @@
 
             // Set the alarm
             let alarm = start.getTime() + alarmInterval;
+
+             // This is the way to set a timed event function
+            var numberOfTimes = 0;
+            while (numberOfTimes < 2) {
+                var x = 0;
+                while (x < 6000) {
+                    setInterval(timerFunction, 100);
+                    x = x + 100;
+                }
+                numberOfTimes = numberOfTimes + 1;
+            }
 
             // This is the function that we will call when the timer event fires.
             function timerFunction() {
@@ -66,7 +68,7 @@
                     setTimeout(timerFunction, 5000);
                     countDown = 60;
                 } else {
-                    countDown = countDown - .01;
+                    countDown = countDown - .001;
                 }
 
                 $time.text(Math.floor(countDown));
