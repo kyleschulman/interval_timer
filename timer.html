@@ -40,7 +40,6 @@ $(document).ready( () => {
 
   // This is the way to set a timed event function
   timerId = setInterval(timerFunction, 100);
-
   // get the current time and save it.
   let start = new Date();
 
@@ -59,15 +58,14 @@ $(document).ready( () => {
     var numberOfTimes = 0;
 
     while (numberOfTimes < 10){
-       if (countDown == 0) {
-        }
-        else if (countDown < 0) {
+       if (countDown < 0) {
+          setTimeout(timerFunction, 5000);
           countDown = 60;
-          setTimeout(5000);
         }
         else {
-          countDown = countDown - .1;
+          countDown = countDown - .01;
         }
+
 
         $time.text(Math.floor(countDown));
         numberOfTimes += 1;
