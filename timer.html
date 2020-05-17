@@ -11,22 +11,19 @@
 
 	<div id="wrapper">
 		<div id="header">Workout Type</div>
-		<div id="main">Warm Up <input type="checkbox" id="WarmUp" name="WarmUp" value="5min"> </div>
 		<div id="main">Main Workout <div class="qty mt-5">
 				<input type="number" class="count" name="qty" value="10">
 			</div>
 		</div>
-		<div id="main">Cool Down <input type="checkbox" id="CoolDown" name="CoolDown" value="5min"> </div>
 	</div>
 
 
 	<div id="chronoExample">
-		<div class="values">00:00:00</div>
+		<div class="values"></div>
 		<div>
 			<button class="startButton">Start</button>
 			<button class="pauseButton">Pause</button>
-			<button class="stopButton">Stop</button>
-			<button class="resetButton">Reset</button>
+
 		</div>
 	</div>
 <div id="time"></div>
@@ -61,17 +58,20 @@ $(document).ready( () => {
     let currentTime = now.getTime();
     var numberOfTimes = 0;
 
-   if (countDown == 0) {
-     numberOfTimes += 1;
-    } else if (countDown < 0) {
-      countDown = 60;
-      setTimeout(5000);
-    } else {
-      countDown = countDown - .1;
-    }
+    while (numberOfTimes < 10){
+       if (countDown == 0) {
+        }
+        else if (countDown < 0) {
+          countDown = 60;
+          setTimeout(5000);
+        }
+        else {
+          countDown = countDown - .1;
+        }
 
-    $time.text(Math.floor(countDown));
-
+        $time.text(Math.floor(countDown));
+        numberOfTimes += 1;
+        }
     // Is it time to blink?
     if(currentTime > alarm) {
       // if you need to repeat, then just reset the alarm
