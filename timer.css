@@ -48,3 +48,15 @@ body {
 	text-align: center;
 	border-radius: 50%;
 }
+
+}
+
+#time {
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  background: #eee;
+  top: 100px;
+  left: 150px;
+  text-align: center;
+}
