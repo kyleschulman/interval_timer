@@ -47,16 +47,14 @@
             // Set the alarm
             let alarm = start.getTime() + alarmInterval;
 
-             // This is the way to set a timed event function
+            // This is the way to set a timed event function
             var numberOfTimes = 0;
-            while (numberOfTimes < 2) {
+            while (x < 60) {
                 var x = 0;
-                while (x < 6000) {
-                    setInterval(timerFunction, 100);
-                    x = x + 100;
-                }
-                numberOfTimes = numberOfTimes + 1;
+                setInterval(timerFunction, 100);
+                x = x + 1;
             }
+
 
             // This is the function that we will call when the timer event fires.
             function timerFunction() {
@@ -65,10 +63,10 @@
                 let currentTime = now.getTime();
 
                 if (countDown < 0) {
-                    setTimeout(timerFunction, 5000);
+                    // setTimeout(timerFunction, 5000);
                     countDown = 60;
                 } else {
-                    countDown = countDown - .001;
+                    countDown = countDown - .01;
                 }
 
                 $time.text(Math.floor(countDown));
