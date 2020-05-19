@@ -37,7 +37,7 @@
 			let $time = $("#time");
             let timer1 = 60000;
             let timer2 = 5000;
-            let segment = 1;
+            let rest = 1;
             let t = 0;
 
 			// get the current time and save it.
@@ -51,28 +51,50 @@
 			let alarm = start.getTime() + alarmInterval;
 
 			// This is the way to set a timed event function
-			var numberOfTimes = 0;
-			while (x < 60) {
-				var x = 0;
-				setInterval(timerFunction, 100);
-				x = x + 1;
+			//var numberOfTimes = 0;
+			//while (x < 60) {
+				//var x = 0;
+				//setInterval(timerFunction, 100);
+				//x = x + 1;
+			//}
+
+
+			function timerFunction() {
+				if (rest == 1){
+					if (t>timer1){
+						t= 0;
+						rest = 2;
+					}
+				}
+				else if(t<timer1){
+					t = t + 50;
+					}
+				else if (rest == 2){
+					if(t>timer2){
+						t=0;
+						rest = 1
+					}
+				}
+				else if(t<timer2){
+					t = t +50;
+				}
+				$time.text(Math.floor(t));
 			}
 
-
 			// This is the function that we will call when the timer event fires.
-			function timerFunction() {
+			//function timerFunction() {
 				// Check the time
-				let now = new Date();
-				let currentTime = now.getTime();
+				//let now = new Date();
+				//let currentTime = now.getTime();
 
-				if (countDown < 0) {
+				//if (countDown < 0) {
 					// setTimeout(timerFunction, 5000);
-					countDown = 60;
-				} else {
-					countDown = countDown - .01;
-				}
+					//countDown = 60;
+				//} else {
+					//countDown = countDown - .01;
+				//}
 
-				$time.text(Math.floor(countDown));
+				//$time.text(Math.floor(countDown));
 
 				// Is it time to blink?
 				if (currentTime > alarm) {
