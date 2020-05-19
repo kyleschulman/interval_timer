@@ -18,14 +18,15 @@
 	</div>
 
 
-	<div id="chronoExample">
-		<div class="values"></div>
-		<div>
-			<button class="startButton">Start</button>
-			<button class="pauseButton">Pause</button>
 
-		</div>
+		<div id= "startButton">
+			<button>Start</button>
 	</div>
+
+	<div id= "pauseButton">
+		<button >Pause</button>
+	</div>
+
 	<div id="time"></div>
 
 	<!--The jQuery library-->
@@ -34,82 +35,89 @@
 
 	<script>
 		$(document).ready(() => {
-			let $time = $("#time");
-            let timer1 = 60000;
-            let timer2 = 5000;
-            let rest = 1;
-            let t = 0;
 
-			function timerFunction() {
-				if (rest == 1){
-					if (t>timer1){
-						t= 0;
-						rest = 2;
-					}
-				}
-				else if(t<timer1){
-					t = t + 50;
-					}
-				else if (rest == 2){
-					if(t>timer2){
-						t=0;
-						rest = 1
-					}
-				}
-				else if(t<timer2){
-					t = t +50;
-				}
-				$time.text(Math.floor(t));
-			}
+let timerId = setInterval(timerFunction, 50);
 
-			// get the current time and save it.
-			//let start = new Date();
+			//$("#startButton").click(function () {
+						//timerId = setInterval(timerFunction, 50);
+					});
 
-			// This is the time interval
-			//let alarmInterval = 60;
-			//let countDown = 60;
 
-			// Set the alarm
-			//let alarm = start.getTime() + alarmInterval;
 
-			// This is the way to set a timed event function
-			//var numberOfTimes = 0;
-			//while (x < 60) {
-				//var x = 0;
-				//setInterval(timerFunction, 100);
-				//x = x + 1;
-			//}
 
-			// This is the function that we will call when the timer event fires.
-			//function timerFunction() {
-				// Check the time
-				//let now = new Date();
-				//let currentTime = now.getTime();
+						let $time = $("#time");
+						let timer1 = 60000;
+						let timer2 = 5000;
+						let rest = 1;
+						let t = 0;
 
-				//if (countDown < 0) {
-					// setTimeout(timerFunction, 5000);
-					//countDown = 60;
-				//} else {
-					//countDown = countDown - .01;
-				//}
+						function timerFunction() {
+							if (rest == 1) {
+								if (t > timer1) {
+									t = 0;
+									rest = 2;
+								}
+							} else if (t < timer1) {
+								t = t + 50;
+							} else if (rest == 2) {
+								if (t > timer2) {
+									t = 0;
+									rest = 1
+								}
+							} else if (t < timer2) {
+								t = t + 50;
+							}
+							$time.text(Math.floor(t));
+						}
 
-				//$time.text(Math.floor(countDown));
+						// get the current time and save it.
+						//let start = new Date();
 
-				// Is it time to blink?
-				//if (currentTime > alarm) {
-					// if you need to repeat, then just reset the alarm
-					//alarm = currentTime + alarmInterval;
+						// This is the time interval
+						//let alarmInterval = 60;
+						//let countDown = 60;
 
-					// or if you need to stop the clock
-					// clearInterval(timerId);
+						// Set the alarm
+						//let alarm = start.getTime() + alarmInterval;
 
-					// Now do the thing that needs to be done at this time
-					// In this case I am just toggleing the visibility of the box
-					// $box.toggle();
-				});
+						// This is the way to set a timed event function
+						//var numberOfTimes = 0;
+						//while (x < 60) {
+						//var x = 0;
+						//setInterval(timerFunction, 100);
+						//x = x + 1;
+						//}
 
-			//}
-		//});
+						// This is the function that we will call when the timer event fires.
+						//function timerFunction() {
+						// Check the time
+						//let now = new Date();
+						//let currentTime = now.getTime();
+
+						//if (countDown < 0) {
+						// setTimeout(timerFunction, 5000);
+						//countDown = 60;
+						//} else {
+						//countDown = countDown - .01;
+						//}
+
+						//$time.text(Math.floor(countDown));
+
+						// Is it time to blink?
+						//if (currentTime > alarm) {
+						// if you need to repeat, then just reset the alarm
+						//alarm = currentTime + alarmInterval;
+
+						// or if you need to stop the clock
+						// clearInterval(timerId);
+
+						// Now do the thing that needs to be done at this time
+						// In this case I am just toggleing the visibility of the box
+						// $box.toggle();
+					});
+
+					//}
+					//});
 
 	</script>
 
