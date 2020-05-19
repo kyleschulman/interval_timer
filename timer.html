@@ -53,7 +53,7 @@
 			let t = 0;
 
 			function timerFunction() {
-				$time.text((t));
+				$time.text(Math.floor(t/1000));
 
 				if (rest == 1 && t < timer1) {
 					t = t + 50;
