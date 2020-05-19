@@ -41,14 +41,14 @@
             let t = 0;
 
 			// get the current time and save it.
-			let start = new Date();
+			//let start = new Date();
 
 			// This is the time interval
-			let alarmInterval = 60;
-			let countDown = 60;
+			//let alarmInterval = 60;
+			//let countDown = 60;
 
 			// Set the alarm
-			let alarm = start.getTime() + alarmInterval;
+			//let alarm = start.getTime() + alarmInterval;
 
 			// This is the way to set a timed event function
 			//var numberOfTimes = 0;
@@ -97,9 +97,9 @@
 				//$time.text(Math.floor(countDown));
 
 				// Is it time to blink?
-				if (currentTime > alarm) {
+				//if (currentTime > alarm) {
 					// if you need to repeat, then just reset the alarm
-					alarm = currentTime + alarmInterval;
+					//alarm = currentTime + alarmInterval;
 
 					// or if you need to stop the clock
 					// clearInterval(timerId);
@@ -107,10 +107,10 @@
 					// Now do the thing that needs to be done at this time
 					// In this case I am just toggleing the visibility of the box
 					// $box.toggle();
-				}
+				});
 
-			}
-		});
+			//}
+		//});
 
 	</script>
 
