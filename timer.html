@@ -34,8 +34,11 @@
 
 	<script>
 		$(document).ready(() => {
-			let $box = $("#box");
 			let $time = $("#time");
+            let timer1 = 60000;
+            let timer2 = 5000;
+            let segment = 1;
+            let t = 0;
 
 			// get the current time and save it.
 			let start = new Date();
