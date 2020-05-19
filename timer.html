@@ -53,20 +53,18 @@
 			function timerFunction() {
 				$time.text((t));
 
-				if (t < timer1) {
+				if (t < timer1 && rest == 1) {
 					t = t + 50;
 				}
 				else if (rest == 1 && t >= timer1) {
 					t = 0;
 					rest = 2;
 				}
-				else if (rest == 2) {
-					if (t > timer2) {
+				else if (rest == 2 && t>timer2) {
 						t = 0;
 						rest = 1
-					}
 				}
-				else if (t < timer2) {
+				else if (t < timer2 && rest==2) {
 					t = t + 50;
 				}
 			}
