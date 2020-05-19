@@ -11,14 +11,23 @@
 
 	<div id="wrapper">
 		<div id="header">Workout Type</div>
+<<<<<<< HEAD
+=======
+		<div id="main">Warm Up <input type="checkbox" id="WarmUp" name="WarmUp" value="5min"> </div>
+>>>>>>> master/master
 		<div id="main">Main Workout <div class="qty mt-5">
 				<input type="number" class="count" name="qty" value="10">
 			</div>
 		</div>
+<<<<<<< HEAD
+=======
+		<div id="main">Cool Down <input type="checkbox" id="CoolDown" name="CoolDown" value="5min"> </div>
+>>>>>>> master/master
 	</div>
 
 
 	<div id="chronoExample">
+<<<<<<< HEAD
 		<div class="values"></div>
 		<div>
 			<button class="startButton">Start</button>
@@ -54,8 +63,52 @@
 				setInterval(timerFunction, 100);
 				x = x + 1;
 			}
+=======
+		<div class="values">00:00:00</div>
+		<div>
+			<button class="startButton">Start</button>
+			<button class="pauseButton">Pause</button>
+			<button class="stopButton">Stop</button>
+			<button class="resetButton">Reset</button>
+		</div>
+	</div>
+<div id="time"></div>
 
+	<!--The jQuery library-->
 
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script>
+
+$(document).ready( () => {
+  let $time = $("#time");
+  let timer1 = 60000;
+  let timer2 = 5000;
+  let segment = 1;
+  let t = 0;
+
+  // This is the way to set a timed event function
+  timerId = setInterval(timerFunction, 100);
+
+  // get the current time and save it.
+  let start = new Date();
+
+  // This is the time interval
+  let alarmInterval = 60;
+  let countDown = 60;
+
+  // Set the alarm
+  let alarm = start.getTime() + alarmInterval;
+>>>>>>> master/master
+
+  // This is the function that we will call when the timer event fires.
+  function timerFunction() {
+    // Check the time
+    let now = new Date();
+    let currentTime = now.getTime();
+    var numberOfTimes = 0;
+
+<<<<<<< HEAD
 			// This is the function that we will call when the timer event fires.
 			function timerFunction() {
 				// Check the time
@@ -93,6 +146,41 @@
 
 	<script src="timer.js"></script>
 
+=======
+   if (countDown == 0) {
+     numberOfTimes += 1;
+    } else if (countDown < 0) {
+      countDown = 60;
+      setTimeout(5000);
+    } else {
+      countDown = countDown - .1;
+    }
+
+    $time.text(Math.floor(countDown));
+
+    // Is it time to blink?
+    if(currentTime > alarm) {
+      // if you need to repeat, then just reset the alarm
+      alarm = currentTime + alarmInterval;
+
+      // or if you need to stop the clock
+      // clearInterval(timerId);
+
+      // Now do the thing that needs to be done at this time
+      // In this case I am just toggleing the visibility of the box
+      // $box.toggle();
+    }
+
+  }
+});
+
+	</script>
+
+	<!--Site-specific JavaScript code using jQuery-->
+
+	<script src="timer.js"></script>
+
+>>>>>>> master/master
 </body>
 
 </html>
