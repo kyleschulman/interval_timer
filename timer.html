@@ -40,25 +40,6 @@
             let rest = 1;
             let t = 0;
 
-			// get the current time and save it.
-			//let start = new Date();
-
-			// This is the time interval
-			//let alarmInterval = 60;
-			//let countDown = 60;
-
-			// Set the alarm
-			//let alarm = start.getTime() + alarmInterval;
-
-			// This is the way to set a timed event function
-			//var numberOfTimes = 0;
-			//while (x < 60) {
-				//var x = 0;
-				//setInterval(timerFunction, 100);
-				//x = x + 1;
-			//}
-
-
 			function timerFunction() {
 				if (rest == 1){
 					if (t>timer1){
@@ -80,6 +61,24 @@
 				}
 				$time.text(Math.floor(t));
 			}
+
+			// get the current time and save it.
+			//let start = new Date();
+
+			// This is the time interval
+			//let alarmInterval = 60;
+			//let countDown = 60;
+
+			// Set the alarm
+			//let alarm = start.getTime() + alarmInterval;
+
+			// This is the way to set a timed event function
+			//var numberOfTimes = 0;
+			//while (x < 60) {
+				//var x = 0;
+				//setInterval(timerFunction, 100);
+				//x = x + 1;
+			//}
 
 			// This is the function that we will call when the timer event fires.
 			//function timerFunction() {
