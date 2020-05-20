@@ -55,7 +55,7 @@
 
             function timerFunction() {
                 $time.text(Math.floor(t / 1000));
-                for (let i = 0; i <= 10; i++) {
+                for (let i = 0; i <= 100; i++) {
                     if (rest == 1 && t < timer1) {
                         t = t + 50;
                     } else if (rest == 1 && t >= timer1) {
@@ -68,9 +68,9 @@
                         t = t + 50;
                     }
                 }
-                clearInterval(timerId);
-                t = 0;
-                rest = 1;
+                //clearInterval(timerId);
+                //t = 0;
+                //rest = 1;
             }
             // get the current time and save it.
             //let start = new Date();
