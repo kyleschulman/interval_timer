@@ -56,7 +56,7 @@
 
 			function timerFunction() {
 				$time.text(Math.floor(t / 1000));
-                // time = time + 1;
+                time = time + 1;
 				if (rest == 1 && t < timer1) {
 					t = t + 50;
 				} else if (rest == 1 && t >= timer1) {
@@ -68,10 +68,10 @@
 				} else if (rest == 2 && t < timer2) {
 					t = t + 50;
                 } else if (rest == 2 && t == timer2) {
-                 //clearInterval(timerId);
                  t = 0;
 				 rest = 1;
-                }
+                } if (time > 2600)
+                clearInterval(timerId);
             }
 			//}
 			// get the current time and save it.
