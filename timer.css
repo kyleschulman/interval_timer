@@ -2,18 +2,18 @@ body {
 	margin: 0;
 }
 
-#wrapper {
+/*#wrapper {
 	padding: 20px;
 	font-size: 20px;
 	border: 20px solid rgba(0, 0, 0, 0.5);
-}
+}*/
 
 #startButton5{
 	background-color:aqua;
 
 }
 /* specific boxes */
-#header {
+//#header {
 	background-color: blue;
 	color: white;
 	padding: 2%;
