@@ -10,12 +10,9 @@
 	<!-- HTML code -->
 
 	<div id="wrapper">
-		<div id="header">Workout Type</div>
-		<div id="main">Main Workout <div class="qty mt-5">
-				<input type="number" class="count" name="qty" value="10">
-			</div>
-		</div>
+		<div id="header">Workout Timer</div>
 	</div>
+    <p>Each Rep is 1 minute long. There is a 5 second rest period before the next interval starts. Click the number of reps you want!</p>
 
 <div id="warmUpButton">
 		<button>Warm Up</button>
@@ -44,14 +41,14 @@
 	<script>
 		$(document).ready(() => {
 
-            $("#warmUpButton").click(function() {
-				timerId = setInterval(warmUpFunction, 50);
-                w = 0;
-				x = 0;
-				y = 0;
-				z = 0;
-				rest = 1;
-			});
+//            $("#warmUpButton").click(function() {
+//				timerId = setInterval(warmUpFunction, 50);
+//              w = 0;
+//              x = 0;
+//				y = 0;
+//				z = 0;
+//				rest = 1;
+//			});
 
 			$("#startButton5").click(function() {
 				timerId = setInterval(timerFunction5, 50);
