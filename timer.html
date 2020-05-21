@@ -17,6 +17,10 @@
 		</div>
 	</div>
 
+<div id="warmUpButton">
+		<button>Warm Up</button>
+	</div>
+
 	<div id="startButton5">
 		<button>5 Reps</button>
 	</div>
@@ -40,6 +44,13 @@
 	<script>
 		$(document).ready(() => {
 
+            $("#warmUpButton").click(function() {
+				timerId = setInterval(warmUpFunction, 1000);
+				x = 0;
+				y = 0;
+				z = 0;
+				rest = 1;
+			});
 
 			$("#startButton5").click(function() {
 				timerId = setInterval(timerFunction5, 50);
@@ -77,6 +88,9 @@
 			let z = 0;
 			let time = 0;
 
+            function warmUpFunction{
+
+            }
 
 			function timerFunction5() {
 				$time.text(Math.floor(x / 1000));
