@@ -66,3 +66,8 @@ body {
 	text-align: center;
 	font-size: 25px;
 }
+#description{
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-family: Andale Mono;
+}
