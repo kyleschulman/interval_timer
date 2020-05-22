@@ -8,16 +8,39 @@ body {
 	border: 20px solid rgba(0, 0, 0, 0.5);
 }
 
-/*#startButton5{
-	background-color:aqua;
-
-}*/
-/* specific boxes */
-//#header {
-	background-color: blue;
-	color: white;
+#startButton5{
+background-color: skyblue;
+border: none;
+color: white;
+padding: 10px 22px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+#startButton15{
+background-color: orangered;
+border: none;
+color: white;
+padding: 10px 22px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+#startButton10{
+background-color: navy;
+border: none;
+color: white;
+padding: 10px 22px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+#header {
+	background-color: antiquewhite;
+    color:darkblue;
 	padding: 2%;
-	width: 50%;
+	width: 96%;
+	text-align: center;
 }
 
 #main {
