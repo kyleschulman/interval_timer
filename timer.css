@@ -35,6 +35,15 @@ text-align: center;
 text-decoration: none;
 display: inline-block;
 }
+#pauseButton{
+background-color: palegoldenrod;
+border: none;
+color: white;
+padding: 10px 22px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
 #header {
 	background-color: antiquewhite;
     color:darkblue;
